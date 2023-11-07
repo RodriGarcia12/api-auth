@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Auth;
 use Lcobucci\JWT\Parser;
 use Illuminate\Support\Facades\Validator;
 
-
-
-
 class UserController extends Controller
 {
     public function Register(Request $request){
@@ -25,11 +22,11 @@ class UserController extends Controller
         if($validation->fails())
             return $validation->errors();
 
-        return $this -> createUser($request);
+        return $this -> Create($request);
         
     }
 
-    private function createUser($request){
+    private function Create($request){
         $user = new User();
         $user -> name = $request -> post("name");
         $user -> email = $request -> post("email");
@@ -44,9 +41,7 @@ class UserController extends Controller
 
     public function Logout(Request $request){
         $request->user()->token()->revoke();
-        return ['message' => 'Token Revoked'];
-        
-        
+        return ['message' => 'Token Revoked'];       
     }
 
     
