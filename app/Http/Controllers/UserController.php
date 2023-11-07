@@ -35,7 +35,7 @@ class UserController extends Controller
         return $user;
     }
 
-    public function ValidateToken(Request $request){
+    public function Validate(Request $request){
         return auth('api')->user();
     }
 
