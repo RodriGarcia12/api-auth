@@ -35,7 +35,7 @@ class UserController extends Controller
         return $user;
     }
 
-    public function Validate(Request $request){
+    public function MakeValidate(Request $request){
         return auth('api')->user();
     }
 
@@ -44,5 +44,10 @@ class UserController extends Controller
         return ['message' => 'Token Revoked'];       
     }
 
-    
+    public function Login(Request $request){
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+    }
 }
