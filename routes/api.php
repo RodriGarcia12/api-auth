@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 Route::prefix('v1')->group(function ()
 {
     Route::post('/register',[UserController::class,"Register"]);
-    Route::get('/validate',[UserController::class,"Validate"])->middleware('auth:api');
+    Route::get('/validate',[UserController::class,"MakeValidate"])->middleware('auth:api');
     Route::get('/logout',[UserController::class,"Logout"])->middleware('auth:api');
 
 
