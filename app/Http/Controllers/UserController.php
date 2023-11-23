@@ -50,4 +50,5 @@ class UserController extends Controller
             'password' => ['required'],
         ]);
     }
+
 }
