@@ -44,11 +44,4 @@ class UserController extends Controller
         return ['message' => 'Token Revoked'];       
     }
 
-    public function Login(Request $request){
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-    }
-
 }
