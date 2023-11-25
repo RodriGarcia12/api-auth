@@ -44,4 +44,7 @@ class UserController extends Controller
         return ['message' => 'Token Revoked'];       
     }
 
+    public function ListUsers(Request $request){
+        return $user = User::all();
+    }
 }
